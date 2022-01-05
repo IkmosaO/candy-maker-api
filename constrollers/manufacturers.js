@@ -4,7 +4,7 @@ const models = require('../models')
 const getManufacturersWithProducts = async (request, response) => {
   try {
     const allManufacturersWithProducts = await models.Manufacturers.findAll({
-      includes: [{ model: models.Products }]
+      include: [{ model: models.Products }]
     })
 
     // console.log(allManufacturersWithProducts)
@@ -18,4 +18,3 @@ const getManufacturersWithProducts = async (request, response) => {
 }
 
 module.exports = { getManufacturersWithProducts }
-
